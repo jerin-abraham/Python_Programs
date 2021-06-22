@@ -87,3 +87,50 @@ print(num_set)
 num_set.pop()
 print("\nAfter removing the first element from the said set:")
 print(num_set)
+
+#Write a Python program to create a union of sets.
+setc1 = set(["green", "blue"])
+setc2 = set(["blue", "yellow"])
+print("Original sets:")
+print(setc1)
+print(setc2)
+setc = setc1.union(setc2)  #two methods of creating union of sets 1.union() method
+setp=setc1|setc2            #2.using Pipe(|) symbol
+print("\nUnion of above sets:")
+print(setc)
+print(setp)
+
+#Write a Python program to create set difference
+setc1 = set(["green", "blue"])
+setc2 = set(["blue", "yellow"])
+print("Original sets:")
+print(setc1)
+print(setc2)
+r1 = setc1.difference(setc2)    #two methods of creating difference of sets 1.difference() method          
+r2=setc1-setc2                  #2.using minus(-) operator
+print("\nDifference of setc1 - setc2:")
+print(r1)
+print(r2)
+r3 = setc2.difference(setc1)
+r4=setc2-setc1
+print("\nDifference of setc2 - setc1:")
+print(r3)
+print(r4)
+
+#Write a Python program to create a symmetric difference.
+#Write a Python program to create set difference
+setc1 = set(["green", "blue"])
+setc2 = set(["blue", "yellow"])
+print("Original sets:")
+print(setc1)
+print(setc2)
+r1 = setc1.symmetric_difference(setc2)    #two methods of creating symmetric_difference of sets 1.symmetric_difference() method          
+r2=setc1^setc2                  #2.using carrot(^) operator
+print("\nDifference of setc1 - setc2:")
+print(r1)
+print(r2)
+r3 = setc2.symmetric_difference(setc1)
+r4=setc2^setc1
+print("\nDifference of setc2 - setc1:")
+print(r3)
+print(r4)

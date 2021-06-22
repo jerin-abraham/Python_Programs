@@ -84,6 +84,8 @@ print(d)
 d["city"]='Kalyan'
 print(d)
 print(d['city'])  #checking values with the key assigned to them
+d.update({'state':'Maharashtra'}) #inserting value in dictionary using update keyword
+print(d)
 
 #Write a Python program to concatenate following dictionaries to create a new one.
 d1={1:10,2:20}
@@ -122,7 +124,7 @@ else:
 #Write a Python program to check whether a given key already exists in a dictionary.
 d = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
 def is_key_present(x):
-  if x in d:
+  if x in d:      #if can also be used as a iteration
       print('Key is present in the dictionary')
   else:
       print('Key is not present in the dictionary')
@@ -150,3 +152,48 @@ d=dict()
 for x in range(1,16):
     d[x]=x**2
 print(d)
+
+#Write a Python script to merge two Python dictionaries.
+d1 = {'a': 100, 'b': 200}
+d2 = {'x': 300, 'y': 200}
+d = d1.copy()  #deep copy applied here
+d.update(d2)
+print(d)
+
+#Write a Python script to merge two Python dictionaries.
+def merge_dictionaries(*dicts): #variable arguments passed here *args
+  result = dict()
+  for d in dicts:
+    result.update(d)
+  return result
+students1 = {
+  'Theodore': 10,
+  'Mathew': 11,
+}
+students2 = {
+  'Roxanne': 9
+}
+print("Original dictionaries:")
+print(students1)
+print(students2)
+print("\nMerge dictionaries:")
+print(merge_dictionaries(students1, students2))
+
+#Write a Python program to iterate over dictionaries using for loops.
+d={1:'Red',2:'Black',3:'Blue',4:'Yellow'}
+for i,j in d.items():
+  print('dict key is:',i,' & value is :',j)
+
+#Write a Python program to sum all the items in a dictionary.
+d={1:'Red',2:'Black',3:'Blue',4:'Yellow'}
+sum=0
+for i in d:
+  sum+=i
+print("sum of key in dictionary is :",sum)
+
+#Write a Python program to sum all the items in a dictionary.
+d={'Red':1,'Black':2,'Blue':3,'Yellow':4}
+sum=0
+for i in d:
+  sum+=d[i]
+print("sum of values in dictionary is :",sum)
