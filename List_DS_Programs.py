@@ -24,7 +24,7 @@ print(type(emp),type(Dep1),type(Dep2),type(HOD_CS),type(HOD_IT))
 #Declaring the empty list  
 l =[]  
 #Number of elements will be entered by the user    
-n = int(input("Enter the number of elements in the list:"))  
+n = int(input("Enter the size of the list you want: "))  
 # for loop to take the input  
 for i in range(0,n):     
     # The input is taken from the user and added to the list as the item  
@@ -71,16 +71,12 @@ for x in list1:
 
 """Write a Python program to sum all the items in a list."""
 
-l=[]
-sum=0
-while True:
-  data=input("Enter values: ")
-  if data=='':
-    break
-  l.append(data)
-for i in l:
-  sum+=sum+int(i)
-print("The sum of elements of the list is:",sum)
+def sum_list(items):
+    sum_numbers = 0
+    for x in items:
+        sum_numbers += x
+    return sum_numbers
+print(sum_list([1,2,-8]))
 
 """Write a Python program to multiplies all the items in a list."""
 
@@ -178,3 +174,98 @@ print(common_data([1,2,3,4,5], [6,7,8,9]))
 
 array = [[ ['*' for col in range(6)] for col in range(4)] for row in range(3)]
 print(array)
+
+"""Write a Python program to remove duplicates from a list."""
+
+a=[10,20,30,20,10,50,60,40,80,50,40]
+
+dup_items=set()
+uniq_items=[]
+
+for i in a:
+  if i not in dup_items:
+    dup_items.add(i)
+    uniq_items.append(i)
+
+print(uniq_items)
+
+"""Write a Python program to check a list is empty or not."""
+
+l = []
+if not l:
+  print("List is empty")
+else:
+  print("List contains elements")
+
+"""Write a Python program to clone or copy a list."""
+
+original_list = [10, 22, 44, 23, 4]
+new_list2 = list(original_list)
+new_list = original_list #shallow copy
+new_list1=original_list.copy() #deep copy
+print(original_list)
+print(new_list1)
+print(new_list1)
+
+"""Write a Python program to print a specified list after removing the 0th, 4th and 5th elements."""
+
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+color = [x for (i,x) in enumerate(color) if i not in (0,4,5)]
+print(color)
+
+"""Write a Python program to print the numbers of a specified list after removing even numbers from it."""
+
+num = [7,8, 120, 25, 44, 20, 27]
+num = [x for x in num if x%2!=0]
+print(num)
+
+"""Write a Python program to shuffle and print a specified list."""
+
+from random import shuffle
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+shuffle(color)
+print(color)
+
+"""Write a Python program to generate and print a list of first and last 5 elements where the values are square of numbers between 1 and 30 (both included)."""
+
+def printValues():
+	l = list()
+	for i in range(1,21):
+		l.append(i**2)
+	print(l[:5])  
+	print(l[-5:])
+
+printValues()
+
+"""Write a Python program to generate and print a list except for the first 5 elements, where the values are square of numbers between 1 and 30 (both included)."""
+
+def printValues():
+	l = list()
+	for i in range(1,31):
+		l.append(i**2)
+	print(l[5:])
+printValues()
+
+"""Write a Python program to generate all permutations of a list in Python."""
+
+#Itertool is a module provided by Python for creating iterators for efficient looping. 
+#Itertools.permutation() function falls under the Combinatoric Generators. 
+#The recursive generators that are used to simplify combinatorial constructs such as permutations, combinations, and Cartesian products are called combinatoric iterators.
+
+import itertools
+print(list(itertools.permutations([1,2,3])))
+
+"""Write a Python program to get the difference between the two lists."""
+
+list1 = [1, 3, 5, 7, 9]
+list2=[1, 2, 4, 6, 7, 8]
+diff_list1_list2 = list(set(list1) - set(list2))
+diff_list2_list1 = list(set(list2) - set(list1))
+total_diff = diff_list1_list2 + diff_list2_list1
+print(total_diff)
+
+"""Write a Python program access the index of a list."""
+
+nums = [5, 15, 35, 8, 98]
+for num_index, num_val in enumerate(nums):
+    print(num_index, num_val)
