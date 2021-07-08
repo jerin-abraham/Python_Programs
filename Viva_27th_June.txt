@@ -1,0 +1,118 @@
+write a program to print prime numbers in range,range should be dynamic
+
+snum=int(input("Enter start range: "))
+enum=int(input("Enter end range: "))
+
+print("Prime numbers between", snum, "and", enum, "are:")
+
+for num in range(snum, enum + 1):
+   # all prime numbers are greater than 1
+   if num > 1:
+       for i in range(2, num):
+           if (num % i) == 0:
+               break
+       else:
+           print(num)
+
+write a program to reverse the string
+eg Hi how are you
+o/p- you are how hi
+
+ip_str=input("Enter string: ")
+strlist=ip_str.split()
+rw_str=strlist.reversed()
+
+print("Reverse of the string is ", rw_str)
+
+
+https://www.geeksforgeeks.org/reverse-string-python-5-different-ways/
+
+
+Write a Python function that accepts a string and calculate the number of upper case letters and lower case letters.
+Sample String : 'The quick Brow Fox'
+Expected Output :
+No. of Upper case characters : 3
+No. of Lower case Characters : 12
+
+
+def count_case(ip_str):
+	lcase=0
+	ucase=0
+	for i in ip_str:
+		if ord(i) in range(97,123):
+			lcase+=1
+	for i in ip_str:
+		if ord(i) in range(65,91):
+			ucase+=1
+	
+	print("No. of Upper case character: ", ucase)
+	print("No. of Lower case character: ",lcase)
+
+ip_str=input("Enter string: ")
+count_case(ip_str)
+
+def string_test(string): 
+    d={"UPPER_CASE":0, "LOWER_CASE":0} 
+    for character in string: 
+         if character.isupper(): 
+              d["UPPER_CASE"]+=1 
+         elif character.islower(): 
+              d["LOWER_CASE"]+=1 
+         else:  
+              pass
+    print ("Original String: ", string) 
+    print ("No. of Upper case characters: ", d["UPPER_CASE"]) 
+    print ("No. of Lower case Characters: ", d["LOWER_CASE"])
+
+string_test('The quick Brown Fox')
+
+
+
+Write a Python function to get str after dot in the input string
+Example : python.py
+Output : py
+
+def ext(ip_str):
+	l=ip_str.index('.')
+	print(ip_str[l+1:])
+	
+	
+ip_str=input("Enter string: ")
+ext(ip_str)
+
+
+Write a Python program to crate two empty classes, Student and Marks. Now create some instances and check whether they are instances of the said classes or not. Also, check whether the said classes are subclasses of the built-in object class or not
+
+class Student:
+  pass
+
+
+class Marks:
+  pass
+
+
+
+st=Student()
+mr=Marks()
+
+print(isinstance(st,Student))
+print(isinstance(mr,Marks))
+print(issubclass(Student,Marks))
+
+
+print alternate character of a string in one line
+
+ip_str=input("Enter String: ")
+print(ip_str[::2])
+[::2] - for even character
+[::3] - for odd character
+
+
+write a program to print right angled pyramid
+for i in range(1,5): print('*'*i)
+
+
+
+
+
+
